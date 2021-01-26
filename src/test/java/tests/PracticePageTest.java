@@ -21,16 +21,32 @@ public class PracticePageTest {
 		System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver");
 		driver = new ChromeDriver();
 
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		driver.manage().window().maximize();
+
 	}
 
 	@Test
-	public void clickOnRadionBtn() throws InterruptedException {
+	public void clickOnRadionBtn() {
 
-		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		driver.manage().window().maximize();
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.clickOnRadioBtn();
-		Thread.sleep(3000);
+
+	}
+
+	@Test
+	public void enterTextInTextBox() {
+
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.setTextAndAutocomplete();
+
+	}
+
+	@Test
+	public void selectOptionFromStaticDropdownMenu() {
+
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.chooseOptionFromDropdownMenu();
 
 	}
 
