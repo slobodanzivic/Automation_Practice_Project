@@ -50,6 +50,12 @@ public class PracticePageTest {
 
 	}
 
+	@Test
+	public void click_on_checkBox() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.clickOnCheckBox();
+	}
+
 	@AfterTest
 	public void tearDown() {
 

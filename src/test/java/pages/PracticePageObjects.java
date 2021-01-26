@@ -13,6 +13,7 @@ public class PracticePageObjects {
 	By radioBtn = By.cssSelector("input[value='radio2']");
 	By textBox_autocomplete = By.cssSelector("input#autocomplete");
 	By selectDropdown = By.cssSelector("select[id*=dropdown]");
+	By checkbox = By.cssSelector("input#checkBoxOption2");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -34,6 +35,10 @@ public class PracticePageObjects {
 		staticDropdown.click();
 		Select selectDropdown = new Select(staticDropdown);
 		selectDropdown.selectByVisibleText("Option2");
+	}
+
+	public void clickOnCheckBox() {
+		driver.findElement(checkbox).click();
 	}
 
 }
