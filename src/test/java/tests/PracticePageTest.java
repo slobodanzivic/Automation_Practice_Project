@@ -1,12 +1,12 @@
 package tests;
 
-import org.testng.annotations.Test;
-
 import java.util.Iterator;
 import java.util.Set;
-import org.openqa.selenium.By;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -103,6 +103,17 @@ public class PracticePageTest {
 		driver.switchTo().window(parentTabId);
 		System.out.println("Test switchTab - page title is: " + driver.getTitle());
 
+	}
+	@Test
+	public void click_OK_onAlert() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.setTextForAlert();
+		ppo.clickOnALertBtn();
+		
+		String alertMessage = driver.switchTo().alert().getText();
+		System.out.println("Test click_OK_onAlert - message alert is: " + alertMessage);
+		driver.switchTo().alert().accept();
+		
 	}
 
 	@AfterTest

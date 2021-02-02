@@ -6,7 +6,7 @@
       <class name="tests.PracticePageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="switchWindow"/>
+          <include name="alert"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- tests.PracticePageTest -->
