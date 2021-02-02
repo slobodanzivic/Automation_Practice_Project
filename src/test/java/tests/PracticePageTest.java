@@ -2,7 +2,9 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import java.util.Set;import org.openqa.selenium.By;
+import java.util.Iterator;
+import java.util.Set;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -54,29 +56,52 @@ public class PracticePageTest {
 
 	@Test
 	public void click_on_checkBox() {
-		
+
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.clickOnCheckBox();
 	}
 
 	@Test
 	public void switchWindow() throws InterruptedException {
-		
+
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.clickOnOpenWindowBtn();
 
-		String parentWindow = driver.getWindowHandle();
-		Set<String> handles = driver.getWindowHandles();
-		
-		for (String windowHandle : handles) {
-			if (!windowHandle.equals(parentWindow)) {
-				driver.switchTo().window(windowHandle);
-				ppo.clickOnHomePage();
-				Thread.sleep(3000);
-				driver.close(); // closing child window
-				driver.switchTo().window(parentWindow); // back to parent window
-			}
-		}
+		Set<String> window = driver.getWindowHandles();
+
+		Iterator<String> it = window.iterator();
+		String parentWindowId = it.next();
+		String childWindowId = it.next();
+
+		driver.switchTo().window(childWindowId);
+		System.out.println("Test switchWindow - page title is: " + driver.getTitle());
+
+		driver.close(); // closing child window
+
+		driver.switchTo().window(parentWindowId);
+		System.out.println("Test switchWindow - page title is: " + driver.getTitle());
+
+	}
+
+	@Test
+	public void switchTab() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.clickOnOpenTabBtn();
+
+		Set<String> tab = driver.getWindowHandles(); // [parentTabId, childTabId]
+
+		Iterator<String> it = tab.iterator();
+		String parentTabId = it.next();
+		String childTabId = it.next();
+
+		// Thread.sleep(3000);
+
+		driver.switchTo().window(childTabId);
+		System.out.println("Test switchTab - page title is: " + driver.getTitle());
+		driver.close();
+
+		driver.switchTo().window(parentTabId);
+		System.out.println("Test switchTab - page title is: " + driver.getTitle());
 
 	}
 

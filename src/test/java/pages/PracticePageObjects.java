@@ -14,8 +14,9 @@ public class PracticePageObjects {
 	By textBox_autocomplete = By.cssSelector("input#autocomplete");
 	By selectDropdown = By.cssSelector("select[id*=dropdown]");
 	By checkbox = By.cssSelector("input#checkBoxOption2");
-	By openWindowBtn = By.cssSelector("button#openwindow");
-	By homePageQAclickAcademy = By.cssSelector("ul.nav.navbar-nav.navbar-right li.active a");
+	By openWindowBtn = By.cssSelector("fieldset button#openwindow");
+	By loginBtn = By.cssSelector("nav.pull-right ul li:nth-child(4) a");
+	By openTab = By.cssSelector("fieldset #opentab");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -47,8 +48,12 @@ public class PracticePageObjects {
 		driver.findElement(openWindowBtn).click();
 	}
 
-	public void clickOnHomePage() {
-		driver.findElement(homePageQAclickAcademy).click();
+	public void clickOnLoginBtn() {
+		driver.findElement(loginBtn).click();
+	}
+
+	public void clickOnOpenTabBtn() {
+		driver.findElement(openTab).click();
 	}
 
 }
