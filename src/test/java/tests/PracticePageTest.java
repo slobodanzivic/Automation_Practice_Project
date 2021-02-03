@@ -94,8 +94,6 @@ public class PracticePageTest {
 		String parentTabId = it.next();
 		String childTabId = it.next();
 
-		// Thread.sleep(3000);
-
 		driver.switchTo().window(childTabId);
 		System.out.println("Test switchTab - page title is: " + driver.getTitle());
 		driver.close();
@@ -104,16 +102,28 @@ public class PracticePageTest {
 		System.out.println("Test switchTab - page title is: " + driver.getTitle());
 
 	}
+
 	@Test
 	public void click_OK_onAlert() {
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.setTextForAlert();
 		ppo.clickOnALertBtn();
-		
+
 		String alertMessage = driver.switchTo().alert().getText();
 		System.out.println("Test click_OK_onAlert - message alert is: " + alertMessage);
 		driver.switchTo().alert().accept();
-		
+
+	}
+
+	@Test
+	public void click_Cancel_onAlert() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.setTextForAlert();
+		ppo.clickOnConfirmBtn();
+
+		String alertMessage = driver.switchTo().alert().getText();
+		System.out.println("Test click_Cancel_onAlert - message alert is: " + alertMessage);
+		driver.switchTo().alert().dismiss();
 	}
 
 	@AfterTest

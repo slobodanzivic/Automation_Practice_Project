@@ -19,6 +19,7 @@ public class PracticePageObjects {
 	By openTab = By.cssSelector("fieldset #opentab");
 	By alertBtn = By.cssSelector("input#alertbtn");
 	By enterTextforAlert = By.cssSelector("input[name='enter-name']");
+	By confirmBtn = By.cssSelector("input[value='Confirm']");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -61,9 +62,13 @@ public class PracticePageObjects {
 	public void clickOnALertBtn() {
 		driver.findElement(alertBtn).click();
 	}
-	
+
 	public void setTextForAlert() {
 		driver.findElement(enterTextforAlert).sendKeys("Slobodan Zivic");
+	}
+
+	public void clickOnConfirmBtn() {
+		driver.findElement(confirmBtn).click();
 	}
 
 }
