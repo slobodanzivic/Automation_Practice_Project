@@ -5,8 +5,18 @@
     <classes>
       <class name="tests.PracticePageTest">
         <methods>
+          <include name="clickOnRadionBtn"/>
+          <include name="click_OK_onAlert"/>
+          <include name="printCourseNameForPyhton"/>
+          <include name="switchTab"/>
           <include name="tearDown"/>
-          <include name="alert"/>
+          <include name="switchWindow"/>
+          <include name="click_on_checkBox"/>
+          <include name="printCoursesNameFromTable"/>
+          <include name="enterTextInTextBox"/>
+          <include name="verifyPythonPrice"/>
+          <include name="selectOptionFromStaticDropdownMenu"/>
+          <include name="click_Cancel_onAlert"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- tests.PracticePageTest -->

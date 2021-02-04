@@ -1,16 +1,12 @@
 package tests;
 
+import org.testng.annotations.Test;
 import java.util.Iterator;
 import java.util.Set;
-
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 import pages.PracticePageObjects;
 
 public class PracticePageTest {
@@ -126,13 +122,38 @@ public class PracticePageTest {
 		driver.switchTo().alert().dismiss();
 	}
 
+	@Test
+	public void printCoursesNameFromTable() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		System.out.println("Test printCoursesNameFromTable - We have the following courses:  ");
+		System.out.println("=================================================================");
+		ppo.getValuesFromTable();
+		System.out.println("=================================================================");
+
+	}
+
+	@Test
+	public void printCourseNameForPyhton() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		System.out.print("Test printCourseNameForPython - Full name for Python course is : ");
+		ppo.printFullNameForPythonCourse();
+
+	}
+
+	@Test
+	public void verifyPythonPrice() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		System.out.print("Test verifyPythonPrice - Price for Python course is : ");
+		ppo.verifyPriceForPythonCourse();
+
+	}
+
 	@AfterTest
 	public void tearDown() {
 
 		driver.close();
 		driver.quit();
 		System.out.println("Test is successfully completed");
-
 	}
 
 }

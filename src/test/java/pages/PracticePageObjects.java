@@ -1,10 +1,12 @@
 package pages;
 
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
 
 public class PracticePageObjects {
 
@@ -20,6 +22,8 @@ public class PracticePageObjects {
 	By alertBtn = By.cssSelector("input#alertbtn");
 	By enterTextforAlert = By.cssSelector("input[name='enter-name']");
 	By confirmBtn = By.cssSelector("input[value='Confirm']");
+	By columnCourses = By.cssSelector("table[name='courses'] tbody tr td:nth-child(2)");
+	By pythonCourseName = By.xpath("//table[@name='courses']/tbody/tr[9]/td[2]");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -71,4 +75,36 @@ public class PracticePageObjects {
 		driver.findElement(confirmBtn).click();
 	}
 
+	public void getValuesFromTable() {
+
+		List<WebElement> myElements = driver.findElements(columnCourses);
+		for (int i = 0; i < myElements.size(); i++) {
+			String courseName = myElements.get(i).getText();
+			System.out.println(courseName);
+		}
+	}
+
+	public void printFullNameForPythonCourse() {
+		List<WebElement> myElements = driver.findElements(columnCourses);
+		for (int i = 0; i < myElements.size(); i++) {
+			String courseName = myElements.get(i).getText();
+			if (courseName.contains("Python")) {
+				String fullNameOfCourse = driver.findElements(columnCourses).get(i).getText();
+				System.out.println(fullNameOfCourse);
+			}
+		}
+	}
+
+	public void verifyPriceForPythonCourse() {
+		List<WebElement> myElements = driver.findElements(columnCourses);
+		for (int i = 0; i < myElements.size(); i++) {
+			String courseName = myElements.get(i).getText();
+			if (courseName.contains("Python")) {
+				String price = driver
+						.findElement(By.xpath("//table[@name='courses']/tbody/tr[9]/td[2]/following-sibling::td[1]"))
+						.getText();
+				System.out.println(price);
+			}
+		}
+	}
 }
