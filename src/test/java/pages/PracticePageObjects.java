@@ -23,6 +23,9 @@ public class PracticePageObjects {
 	By confirmBtn = By.cssSelector("input[value='Confirm']");
 	By columnCourses = By.cssSelector("table[name='courses'] tbody tr td:nth-child(2)");
 	By pythonCourseName = By.xpath("//table[@name='courses']/tbody/tr[9]/td[2]");
+	By inputTextFieldShowHide = By.cssSelector("input[name='show-hide']");
+	By hideBtn = By.cssSelector("input[onclick='hideElement()']");
+	By showBtn = By.cssSelector("input[onclick='showElement()']");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -113,4 +116,28 @@ public class PracticePageObjects {
 		}
 		return coursePrice;
 	}
+
+	public Boolean visibilityOfInputFieldShowHide() {
+		if (driver.findElement(inputTextFieldShowHide).isDisplayed()) {
+			System.out.println("Input field is visible");
+			return true;
+
+		} else {
+			System.out.println("Input field is not visible");
+			return false;
+		}
+	}
+
+	public void setTextInInputFieldShowHide() {
+		driver.findElement(inputTextFieldShowHide).sendKeys("Slobodan Zivic");
+	}
+
+	public void clickOnHideBtn() {
+		driver.findElement(hideBtn).click();
+	}
+
+	public void clickOnShowBtn() {
+		driver.findElement(showBtn).click();
+	}
+
 }

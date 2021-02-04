@@ -149,6 +149,15 @@ public class PracticePageTest {
 
 	}
 
+	@Test
+	public void VerifyIfInputTextFieldIsVisibleOrNot() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.visibilityOfInputFieldShowHide();
+		ppo.setTextInInputFieldShowHide();
+		ppo.clickOnHideBtn();
+		ppo.visibilityOfInputFieldShowHide();
+	}
+
 	@AfterTest
 	public void tearDown() {
 
