@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import pages.PracticePageObjects;
@@ -144,7 +145,7 @@ public class PracticePageTest {
 	public void verifyPythonPrice() {
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		System.out.print("Test verifyPythonPrice - Price for Python course is : ");
-		ppo.verifyPriceForPythonCourse();
+		Assert.assertEquals(ppo.verifyPriceForPythonCourse(), "25");
 
 	}
 

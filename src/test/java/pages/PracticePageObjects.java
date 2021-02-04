@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-
 public class PracticePageObjects {
 
 	WebDriver driver = null;
@@ -95,8 +94,12 @@ public class PracticePageObjects {
 		}
 	}
 
-	public void verifyPriceForPythonCourse() {
+	public String verifyPriceForPythonCourse() {
+
 		List<WebElement> myElements = driver.findElements(columnCourses);
+
+		String coursePrice = null;
+
 		for (int i = 0; i < myElements.size(); i++) {
 			String courseName = myElements.get(i).getText();
 			if (courseName.contains("Python")) {
@@ -104,7 +107,10 @@ public class PracticePageObjects {
 						.findElement(By.xpath("//table[@name='courses']/tbody/tr[9]/td[2]/following-sibling::td[1]"))
 						.getText();
 				System.out.println(price);
+
+				coursePrice = price;
 			}
 		}
+		return coursePrice;
 	}
 }
