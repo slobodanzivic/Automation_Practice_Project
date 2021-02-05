@@ -37,7 +37,6 @@ public class PracticePageTest {
 
 	@Test
 	public void enterTextInTextBox() {
-
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.setTextAndAutocomplete();
 
@@ -45,7 +44,6 @@ public class PracticePageTest {
 
 	@Test
 	public void selectOptionFromStaticDropdownMenu() {
-
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.chooseOptionFromDropdownMenu();
 
@@ -158,12 +156,36 @@ public class PracticePageTest {
 		ppo.visibilityOfInputFieldShowHide();
 	}
 
+	@Test
+	public void printTotalNumberOfLinks() {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		Assert.assertEquals(ppo.printCountOfLinksOnThePage(), 27);
+	}
+
+	@Test
+	public void scrollingDown_OnTable() throws InterruptedException {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.scrollingDownOnTable();
+	}
+
+	@Test
+	public void clickOnMouseHover() throws InterruptedException {
+
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.scrollingDownOnHomePage();
+		ppo.clickOnTopOptionOnMouseOver();
+
+	}
+
 	@AfterTest
 	public void tearDown() {
 
 		driver.close();
 		driver.quit();
-		System.out.println("Test is successfully completed");
-	}
 
+		System.out.println("----------------------------------------------------------");
+		System.out.println("Test is successfully completed");
+		System.out.println("----------------------------------------------------------");
+
+	}
 }

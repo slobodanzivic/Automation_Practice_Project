@@ -1,10 +1,13 @@
 package pages;
 
 import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PracticePageObjects {
@@ -26,6 +29,8 @@ public class PracticePageObjects {
 	By inputTextFieldShowHide = By.cssSelector("input[name='show-hide']");
 	By hideBtn = By.cssSelector("input[onclick='hideElement()']");
 	By showBtn = By.cssSelector("input[onclick='showElement()']");
+	By mouseoverBtn = By.cssSelector("button#mousehover");
+	By topOptionOnMouseOver = By.cssSelector("div[class*='mouse-hover-content'] a:nth-child(1)");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -138,6 +143,40 @@ public class PracticePageObjects {
 
 	public void clickOnShowBtn() {
 		driver.findElement(showBtn).click();
+	}
+
+	public int printCountOfLinksOnThePage() {
+		int totalCountOfLinks = driver.findElements(By.tagName("a")).size();
+		System.out.println("Total number of links on the web page are: " + totalCountOfLinks);
+		return totalCountOfLinks;
+	}
+
+	public void scrollingDownOnHomePage() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(3000);
+	}
+
+	public void scrollingDownOnTable() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(3000);
+		js.executeScript("document.querySelector('.tableFixHead').scrollTop=5000");
+		Thread.sleep(2000);
+	}
+
+	public void clickOnMouseOverBtn() {
+		driver.findElement(mouseoverBtn).click();
+	}
+
+	public void clickOnTopOptionOnMouseOver() throws InterruptedException {
+
+		Actions a = new Actions(driver);
+		a.moveToElement(driver.findElement(By.cssSelector("button#mousehover"))).build().perform();
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector("div[class*='mouse-hover-content'] a:nth-child(1)")).click();
+		Thread.sleep(3000);
+
 	}
 
 }
