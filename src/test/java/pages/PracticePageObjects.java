@@ -33,6 +33,7 @@ public class PracticePageObjects {
 	By topOptionOnMouseOver = By.cssSelector("div[class*='mouse-hover-content'] a:nth-child(1)");
 	By latestNewsColumn = By.cssSelector("div#gf-BIG tbody tr td:nth-child(2) ul");
 	By socialMediaColumn = By.cssSelector("div#gf-BIG tbody tr td:nth-child(4) ul");
+	By priceForCourses = By.cssSelector("table[name = courses] tbody td:nth-child(3)");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -87,6 +88,7 @@ public class PracticePageObjects {
 	public void getValuesFromTable() {
 
 		List<WebElement> myElements = driver.findElements(columnCourses);
+
 		for (int i = 0; i < myElements.size(); i++) {
 			String courseName = myElements.get(i).getText();
 			System.out.println(courseName);
@@ -94,7 +96,9 @@ public class PracticePageObjects {
 	}
 
 	public void printFullNameForPythonCourse() {
+
 		List<WebElement> myElements = driver.findElements(columnCourses);
+
 		for (int i = 0; i < myElements.size(); i++) {
 			String courseName = myElements.get(i).getText();
 			if (courseName.contains("Python")) {
@@ -148,24 +152,28 @@ public class PracticePageObjects {
 	}
 
 	public int printCountOfLinksOnThePage() {
+
 		int totalCountOfLinks = driver.findElements(By.tagName("a")).size();
 		System.out.println("Total number of links on the web page are: " + totalCountOfLinks);
 		return totalCountOfLinks;
 	}
 
 	public void scrollingDownOnHomePage() throws InterruptedException {
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(3000);
 	}
 
 	public void scrollingDownToTheBottomOfPage() throws InterruptedException {
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,2000)");
 		Thread.sleep(3000);
 	}
 
 	public void scrollingDownOnTable() throws InterruptedException {
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(3000);
@@ -188,6 +196,7 @@ public class PracticePageObjects {
 	}
 
 	public void scrollingDownToFrame() throws InterruptedException {
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1100)");
 		Thread.sleep(3000);
@@ -198,7 +207,9 @@ public class PracticePageObjects {
 	}
 
 	public void printAllLinksFromColumnLatestNews() {
+
 		List<WebElement> allLinks = driver.findElements(latestNewsColumn);
+
 		for (int i = 0; i < allLinks.size(); i++) {
 			String nameOfLink = allLinks.get(i).getText();
 			System.out.println(nameOfLink);
@@ -206,10 +217,28 @@ public class PracticePageObjects {
 	}
 
 	public void printAllLinksFromColumnSocialMedia() {
+
 		List<WebElement> allLinks = driver.findElements(socialMediaColumn);
+
 		for (int i = 0; i < allLinks.size(); i++) {
 			String nameOfLinks = allLinks.get(i).getText();
 			System.out.println(nameOfLinks);
 		}
+	}
+
+	public void sumOfPricesForAllCourses() {
+
+		int sum = 0;
+
+		List<WebElement> prices = driver.findElements(priceForCourses);
+
+		for (int i = 0; i < prices.size(); i++) {
+			String price = prices.get(i).getText();
+			int a  = Integer.parseInt(price);
+			sum = sum + a;
+			
+		}
+
+		System.out.println("Total price for all courses in Web table Example is: " + sum);
 	}
 }

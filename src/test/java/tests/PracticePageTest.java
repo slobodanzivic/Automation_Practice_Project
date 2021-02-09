@@ -365,6 +365,7 @@ public class PracticePageTest {
 
 	@Test(priority = 17)
 	public void printNamesOfLinksFromColumnLatestNews() throws InterruptedException {
+		
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.scrollingDownToTheBottomOfPage();
 		System.out.println("*******************************************");
@@ -376,6 +377,7 @@ public class PracticePageTest {
 
 	@Test(priority = 18)
 	public void printNamesOfLinksFromColumnSocialMedia() throws InterruptedException {
+		
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.scrollingDownToTheBottomOfPage();
 		System.out.println("*******************************************");
@@ -383,6 +385,13 @@ public class PracticePageTest {
 		System.out.println("===========================================");
 		ppo.printAllLinksFromColumnSocialMedia();
 		System.out.println("===========================================");
+	}
+
+	@Test(priority = 19)
+	public void sumPricesForAllCourses() {
+		
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.sumOfPricesForAllCourses();
 	}
 
 	@AfterTest
