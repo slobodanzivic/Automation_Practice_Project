@@ -179,4 +179,13 @@ public class PracticePageObjects {
 
 	}
 
+	public void scrollingDownToFrame() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1100)");
+		Thread.sleep(3000);
+	}
+
+	public void switchToIframe() {
+		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe#courses-iframe")));
+	}
 }
