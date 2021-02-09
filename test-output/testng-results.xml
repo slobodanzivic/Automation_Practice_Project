@@ -1,89 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
+<testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-09T19:13:43 CET" name="Default suite" finished-at="2021-02-09T19:14:27 CET" duration-ms="43661">
+  <suite started-at="2021-02-09T20:10:42 CET" name="Default suite" finished-at="2021-02-09T20:11:38 CET" duration-ms="56386">
     <groups>
     </groups>
-    <test started-at="2021-02-09T19:13:43 CET" name="Default test" finished-at="2021-02-09T19:14:27 CET" duration-ms="43661">
+    <test started-at="2021-02-09T20:10:42 CET" name="Default test" finished-at="2021-02-09T20:11:38 CET" duration-ms="56386">
       <class name="tests.PracticePageTest">
-        <test-method is-config="true" signature="setUpExtentReports()[pri:0, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:13:43 CET" name="setUpExtentReports" finished-at="2021-02-09T19:13:43 CET" duration-ms="160" status="PASS">
+        <test-method is-config="true" signature="setUpExtentReports()[pri:0, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:10:42 CET" name="setUpExtentReports" finished-at="2021-02-09T20:10:42 CET" duration-ms="169" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpExtentReports -->
-        <test-method is-config="true" signature="setUpDriver()[pri:0, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:13:43 CET" name="setUpDriver" finished-at="2021-02-09T19:13:52 CET" duration-ms="8641" status="PASS">
+        <test-method is-config="true" signature="setUpDriver()[pri:0, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:10:42 CET" name="setUpDriver" finished-at="2021-02-09T20:10:49 CET" duration-ms="6624" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpDriver -->
-        <test-method signature="clickOnRadionBtn()[pri:1, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:13:52 CET" name="clickOnRadionBtn" finished-at="2021-02-09T19:13:52 CET" duration-ms="100" status="PASS">
+        <test-method signature="clickOnRadionBtn()[pri:1, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:10:49 CET" name="clickOnRadionBtn" finished-at="2021-02-09T20:10:49 CET" duration-ms="138" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnRadionBtn -->
-        <test-method signature="enterTextInTextBox()[pri:2, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:13:52 CET" name="enterTextInTextBox" finished-at="2021-02-09T19:13:52 CET" duration-ms="372" status="PASS">
+        <test-method signature="enterTextInTextBox()[pri:2, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:10:49 CET" name="enterTextInTextBox" finished-at="2021-02-09T20:10:49 CET" duration-ms="366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterTextInTextBox -->
-        <test-method signature="selectOptionFromStaticDropdownMenu()[pri:3, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:13:52 CET" name="selectOptionFromStaticDropdownMenu" finished-at="2021-02-09T19:13:52 CET" duration-ms="211" status="PASS">
+        <test-method signature="selectOptionFromStaticDropdownMenu()[pri:3, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:10:49 CET" name="selectOptionFromStaticDropdownMenu" finished-at="2021-02-09T20:10:49 CET" duration-ms="174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectOptionFromStaticDropdownMenu -->
-        <test-method signature="click_on_checkBox()[pri:4, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:13:52 CET" name="click_on_checkBox" finished-at="2021-02-09T19:13:52 CET" duration-ms="104" status="PASS">
+        <test-method signature="click_on_checkBox()[pri:4, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:10:49 CET" name="click_on_checkBox" finished-at="2021-02-09T20:10:49 CET" duration-ms="83" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_on_checkBox -->
-        <test-method signature="switchWindow()[pri:5, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:13:52 CET" name="switchWindow" finished-at="2021-02-09T19:14:03 CET" duration-ms="10387" status="PASS">
+        <test-method signature="switchWindow()[pri:5, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:10:49 CET" name="switchWindow" finished-at="2021-02-09T20:11:08 CET" duration-ms="18881" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- switchWindow -->
-        <test-method signature="switchTab()[pri:6, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:03 CET" name="switchTab" finished-at="2021-02-09T19:14:06 CET" duration-ms="3022" status="PASS">
+        <test-method signature="switchTab()[pri:6, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:08 CET" name="switchTab" finished-at="2021-02-09T20:11:11 CET" duration-ms="2923" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- switchTab -->
-        <test-method signature="click_OK_onAlert()[pri:7, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:06 CET" name="click_OK_onAlert" finished-at="2021-02-09T19:14:06 CET" duration-ms="206" status="PASS">
+        <test-method signature="click_OK_onAlert()[pri:7, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:11 CET" name="click_OK_onAlert" finished-at="2021-02-09T20:11:12 CET" duration-ms="245" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_OK_onAlert -->
-        <test-method signature="click_Cancel_onAlert()[pri:8, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:06 CET" name="click_Cancel_onAlert" finished-at="2021-02-09T19:14:06 CET" duration-ms="199" status="PASS">
+        <test-method signature="click_Cancel_onAlert()[pri:8, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:12 CET" name="click_Cancel_onAlert" finished-at="2021-02-09T20:11:12 CET" duration-ms="216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_Cancel_onAlert -->
-        <test-method signature="printCoursesNameFromTable()[pri:9, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:06 CET" name="printCoursesNameFromTable" finished-at="2021-02-09T19:14:06 CET" duration-ms="188" status="PASS">
+        <test-method signature="printCoursesNameFromTable()[pri:9, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:12 CET" name="printCoursesNameFromTable" finished-at="2021-02-09T20:11:12 CET" duration-ms="277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- printCoursesNameFromTable -->
-        <test-method signature="printCourseNameForPyhton()[pri:10, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:06 CET" name="printCourseNameForPyhton" finished-at="2021-02-09T19:14:07 CET" duration-ms="146" status="PASS">
+        <test-method signature="printCourseNameForPyhton()[pri:10, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:12 CET" name="printCourseNameForPyhton" finished-at="2021-02-09T20:11:12 CET" duration-ms="153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- printCourseNameForPyhton -->
-        <test-method signature="verifyPythonPrice()[pri:11, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:07 CET" name="verifyPythonPrice" finished-at="2021-02-09T19:14:07 CET" duration-ms="148" status="PASS">
+        <test-method signature="verifyPythonPrice()[pri:11, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:12 CET" name="verifyPythonPrice" finished-at="2021-02-09T20:11:12 CET" duration-ms="156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPythonPrice -->
-        <test-method signature="VerifyIfInputTextFieldIsVisibleOrNot()[pri:12, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:07 CET" name="VerifyIfInputTextFieldIsVisibleOrNot" finished-at="2021-02-09T19:14:07 CET" duration-ms="274" status="PASS">
+        <test-method signature="VerifyIfInputTextFieldIsVisibleOrNot()[pri:12, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:12 CET" name="VerifyIfInputTextFieldIsVisibleOrNot" finished-at="2021-02-09T20:11:13 CET" duration-ms="381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyIfInputTextFieldIsVisibleOrNot -->
-        <test-method signature="printTotalNumberOfLinks()[pri:13, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:07 CET" name="printTotalNumberOfLinks" finished-at="2021-02-09T19:14:07 CET" duration-ms="18" status="PASS">
+        <test-method signature="printTotalNumberOfLinks()[pri:13, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:13 CET" name="printTotalNumberOfLinks" finished-at="2021-02-09T20:11:13 CET" duration-ms="26" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- printTotalNumberOfLinks -->
-        <test-method signature="scrollingDown_OnTable()[pri:14, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:07 CET" name="scrollingDown_OnTable" finished-at="2021-02-09T19:14:12 CET" duration-ms="5039" status="PASS">
+        <test-method signature="scrollingDown_OnTable()[pri:14, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:13 CET" name="scrollingDown_OnTable" finished-at="2021-02-09T20:11:18 CET" duration-ms="5036" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scrollingDown_OnTable -->
-        <test-method signature="clickOnMouseHover()[pri:15, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:12 CET" name="clickOnMouseHover" finished-at="2021-02-09T19:14:20 CET" duration-ms="8307" status="PASS">
+        <test-method signature="clickOnMouseHover()[pri:15, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:18 CET" name="clickOnMouseHover" finished-at="2021-02-09T20:11:26 CET" duration-ms="8297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnMouseHover -->
-        <test-method signature="switchToFrame()[pri:16, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:20 CET" name="switchToFrame" finished-at="2021-02-09T19:14:27 CET" duration-ms="6115" status="PASS">
+        <test-method signature="switchToFrame()[pri:16, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:26 CET" name="switchToFrame" finished-at="2021-02-09T20:11:32 CET" duration-ms="6102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- switchToFrame -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:27 CET" name="tearDown" finished-at="2021-02-09T19:14:27 CET" duration-ms="113" status="PASS">
+        <test-method signature="printNamesOfLinksFromColumnLatestNews()[pri:17, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:32 CET" name="printNamesOfLinksFromColumnLatestNews" finished-at="2021-02-09T20:11:35 CET" duration-ms="3072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printNamesOfLinksFromColumnLatestNews -->
+        <test-method signature="printNamesOfLinksFromColumnSocialMedia()[pri:18, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:35 CET" name="printNamesOfLinksFromColumnSocialMedia" finished-at="2021-02-09T20:11:38 CET" duration-ms="3051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printNamesOfLinksFromColumnSocialMedia -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:38 CET" name="tearDown" finished-at="2021-02-09T20:11:38 CET" duration-ms="102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:tests.PracticePageTest@7fc2413d]" started-at="2021-02-09T19:14:27 CET" name="endTest" finished-at="2021-02-09T19:14:27 CET" duration-ms="366" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:tests.PracticePageTest@70be0a2b]" started-at="2021-02-09T20:11:38 CET" name="endTest" finished-at="2021-02-09T20:11:39 CET" duration-ms="335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->

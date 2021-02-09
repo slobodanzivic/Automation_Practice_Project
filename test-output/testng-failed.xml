@@ -5,10 +5,23 @@
     <classes>
       <class name="tests.PracticePageTest">
         <methods>
-          <include name="verifyPythonPrice"/>
+          <include name="clickOnMouseHover"/>
+          <include name="scrollingDown_OnTable"/>
+          <include name="VerifyIfInputTextFieldIsVisibleOrNot"/>
+          <include name="click_OK_onAlert"/>
+          <include name="printCourseNameForPyhton"/>
+          <include name="printTotalNumberOfLinks"/>
+          <include name="switchTab"/>
           <include name="tearDown"/>
           <include name="switchWindow"/>
-          <include name="setUp"/>
+          <include name="switchToFrame"/>
+          <include name="printCoursesNameFromTable"/>
+          <include name="verifyPythonPrice"/>
+          <include name="setUpDriver"/>
+          <include name="endTest"/>
+          <include name="click_Cancel_onAlert"/>
+          <include name="setUpExtentReports"/>
+          <include name="printNamesOfLinksFromColumnLatestNews"/>
         </methods>
       </class> <!-- tests.PracticePageTest -->
     </classes>

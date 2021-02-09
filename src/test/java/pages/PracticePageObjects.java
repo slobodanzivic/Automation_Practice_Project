@@ -31,6 +31,8 @@ public class PracticePageObjects {
 	By showBtn = By.cssSelector("input[onclick='showElement()']");
 	By mouseoverBtn = By.cssSelector("button#mousehover");
 	By topOptionOnMouseOver = By.cssSelector("div[class*='mouse-hover-content'] a:nth-child(1)");
+	By latestNewsColumn = By.cssSelector("div#gf-BIG tbody tr td:nth-child(2) ul");
+	By socialMediaColumn = By.cssSelector("div#gf-BIG tbody tr td:nth-child(4) ul");
 
 	public PracticePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -157,6 +159,12 @@ public class PracticePageObjects {
 		Thread.sleep(3000);
 	}
 
+	public void scrollingDownToTheBottomOfPage() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,2000)");
+		Thread.sleep(3000);
+	}
+
 	public void scrollingDownOnTable() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
@@ -187,5 +195,21 @@ public class PracticePageObjects {
 
 	public void switchToIframe() {
 		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe#courses-iframe")));
+	}
+
+	public void printAllLinksFromColumnLatestNews() {
+		List<WebElement> allLinks = driver.findElements(latestNewsColumn);
+		for (int i = 0; i < allLinks.size(); i++) {
+			String nameOfLink = allLinks.get(i).getText();
+			System.out.println(nameOfLink);
+		}
+	}
+
+	public void printAllLinksFromColumnSocialMedia() {
+		List<WebElement> allLinks = driver.findElements(socialMediaColumn);
+		for (int i = 0; i < allLinks.size(); i++) {
+			String nameOfLinks = allLinks.get(i).getText();
+			System.out.println(nameOfLinks);
+		}
 	}
 }

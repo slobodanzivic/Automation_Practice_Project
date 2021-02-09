@@ -363,6 +363,28 @@ public class PracticePageTest {
 
 	}
 
+	@Test(priority = 17)
+	public void printNamesOfLinksFromColumnLatestNews() throws InterruptedException {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.scrollingDownToTheBottomOfPage();
+		System.out.println("*******************************************");
+		System.out.println("Names of links from column Latest News are: ");
+		System.out.println("===========================================");
+		ppo.printAllLinksFromColumnLatestNews();
+		System.out.println("===========================================");
+	}
+
+	@Test(priority = 18)
+	public void printNamesOfLinksFromColumnSocialMedia() throws InterruptedException {
+		PracticePageObjects ppo = new PracticePageObjects(driver);
+		ppo.scrollingDownToTheBottomOfPage();
+		System.out.println("*******************************************");
+		System.out.println("Names of links from column Social Media are: ");
+		System.out.println("===========================================");
+		ppo.printAllLinksFromColumnSocialMedia();
+		System.out.println("===========================================");
+	}
+
 	@AfterTest
 	public void tearDown() {
 
