@@ -5,16 +5,21 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import pages.PracticePageObjects;
+import pages.PropertiesFile;
 
 public class PracticePageTest {
 
@@ -22,34 +27,44 @@ public class PracticePageTest {
 	ExtentReports extent = null;
 
 	static WebDriver driver = null;
+	public static String browserName = null;
 
 	@BeforeSuite
 	public void setUpExtentReports() {
+		
 		htmlReporter = new ExtentHtmlReporter("extentReports.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 	}
 
 	@BeforeTest
-	public void setUpDriver() {
-
+	public void setUpTest() throws IOException {
+		
 		String projectPath = System.getProperty("user.dir");
-		// System.out.println(projectPath);
-		System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver");
-		driver = new ChromeDriver();
-
-		ExtentTest test = extent.createTest("Open the web site");
-		// test.log(Status.INFO, "Starting test");
-		test.info("Starting test");
-
-		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		test.pass("Navigated to url: https://rahulshettyacademy.com/AutomationPractice/ ");
-
-		driver.manage().window().maximize();
-		test.pass("Maximize the window");
-
-		test.info("Test is completed.");
-
+		PropertiesFile.getProperties();
+		
+		if(browserName.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver");
+			driver = new ChromeDriver();
+			
+			
+		}else if(browserName.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver", projectPath + "/drivers/geckodriver");
+			driver = new FirefoxDriver();
+			
+		}
+		
+		 ExtentTest test = extent.createTest("Open the web site"); 
+		 test.log(Status.INFO, "Starting test"); test.info("Starting test");
+		 
+		 driver.get("https://rahulshettyacademy.com/AutomationPractice");                    
+		 test.pass("Navigated to url: https://rahulshettyacademy.com/AutomationPractice/ ");
+		 
+		 driver.manage().window().maximize(); 
+		 test.pass("Maximize the window");
+		 
+		 test.info("Test is completed.");
+	
 	}
 
 	@Test(priority = 1)
@@ -149,28 +164,22 @@ public class PracticePageTest {
 
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.clickOnOpenTabBtn();
-
-		Set<String> tab = driver.getWindowHandles(); // [parentTabId, childTabId]
-
-		Iterator<String> it = tab.iterator();
-		String parentTabId = it.next();
-		String childTabId = it.next();
-
-		driver.switchTo().window(childTabId);
-		test6.pass("Child tab is in focus.");
-
-		System.out.println("Test switchTab - page title is: " + driver.getTitle());
-		test6.pass("Page title of child tab is printed");
-
-		driver.close();
-		test6.pass("Child tab is closed.");
-
-		driver.switchTo().window(parentTabId);
-		test6.pass("Parent tab is now in focus.");
-
-		System.out.println("Test switchTab - page title is: " + driver.getTitle());
+		
+		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+		
+	    driver.switchTo().window(tabs2.get(1));
+	    test6.pass("Child tab is in focus.");
+	    
+	    driver.close();
+	    test6.pass("Child tab is closed.");
+	    
+	    driver.switchTo().window(tabs2.get(0));
+	    test6.pass("Parent tab is now in focus.");
+		
+	    
+	    System.out.println("Test switchTab - page title is: " + driver.getTitle());
 		test6.pass("Page title of parent tab is printed.");
-
+		
 		test6.info("Test switchTab  is completed.");
 
 	}
@@ -285,7 +294,7 @@ public class PracticePageTest {
 		ppo.visibilityOfInputFieldShowHide();
 		test12.pass("Check if input field is displayed.");
 
-		ppo.setTextInInputFieldShowHide();
+		ppo.setTextInInputFieldShowHide("Slobodan Zivic");
 		test12.pass("Text _Slobodan Zivic_ is entered in the text box. ");
 
 		ppo.clickOnHideBtn();
@@ -403,9 +412,6 @@ public class PracticePageTest {
 		driver.close();
 		test17.pass("Driver is closed.");
 
-		driver.quit();
-		test17.pass("Driver is quited.");
-
 		System.out.println("----------------------------------------------------------");
 
 		System.out.println("Test is successfully completed");
@@ -419,6 +425,7 @@ public class PracticePageTest {
 
 	@AfterSuite
 	public void endTest() {
+		
 		extent.flush();
 	}
 }

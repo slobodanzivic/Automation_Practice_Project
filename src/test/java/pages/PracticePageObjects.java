@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class PracticePageObjects {
 
+	static String projectPath = System.getProperty("user.dir");
+
 	WebDriver driver = null;
 
 	By radioBtn = By.cssSelector("input[value='radio2']");
@@ -129,6 +131,7 @@ public class PracticePageObjects {
 	}
 
 	public Boolean visibilityOfInputFieldShowHide() {
+		
 		if (driver.findElement(inputTextFieldShowHide).isDisplayed()) {
 			System.out.println("Input field is visible");
 			return true;
@@ -139,8 +142,10 @@ public class PracticePageObjects {
 		}
 	}
 
-	public void setTextInInputFieldShowHide() {
-		driver.findElement(inputTextFieldShowHide).sendKeys("Slobodan Zivic");
+	public String setTextInInputFieldShowHide(String text) {
+		
+		driver.findElement(inputTextFieldShowHide).sendKeys(text);
+		return text;
 	}
 
 	public void clickOnHideBtn() {
@@ -234,11 +239,12 @@ public class PracticePageObjects {
 
 		for (int i = 0; i < prices.size(); i++) {
 			String price = prices.get(i).getText();
-			int a  = Integer.parseInt(price);
+			int a = Integer.parseInt(price);
 			sum = sum + a;
-			
+
 		}
 
 		System.out.println("Total price for all courses in Web table Example is: " + sum);
 	}
+
 }
