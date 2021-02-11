@@ -17,7 +17,7 @@ Used libraries:
 - Selenium portable framework for testing web applications 
 
 ## This project contains 3 packages:
-  -config
-  -pages
-  -tests
+-config
+-pages
+-tests
   
