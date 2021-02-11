@@ -20,4 +20,13 @@ Used libraries:
 - config
 - pages
 - tests
-  
+
+## Package `pages` contains 2 classes:
+- PracticePageObjects 
+- PropertiesFile
+
+## Package `tests` contains 1 class:
+- PracticePageTest  
+
+## Package `config` contains 1 file:
+-config.properties
