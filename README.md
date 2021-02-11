@@ -16,7 +16,7 @@ Used libraries:
 - TestNG automation testing framework  
 - Selenium portable framework for testing web applications 
 
-## This project contains 3 packages:
+## Folder `src/test/java` 3 packages:
 - config
 - pages
 - tests
