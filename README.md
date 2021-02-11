@@ -2,7 +2,7 @@
 # Automation_Practice_Project
 Version: 1.0.0
 
-### Automation_Practice_Project is used for testing functionalities  
+### Automation_Practice_Project is Maven project used for testing functionalities  
 
 Target application URL is: ``https://rahulshettyacademy.com/AutomationPractice/``  
 Target browser: Chrome, Firefox 
@@ -29,4 +29,10 @@ Used libraries:
 - PracticePageTest  
 
 ## Package `config` contains 1 file:
--config.properties
+- config.properties
+
+## Project contains :
+- extentReports.html 
+- pom.xml file
+- testng.xml file
+
