@@ -6,8 +6,8 @@ Version: 1.0.0
 
 Target application URL is: ``https://rahulshettyacademy.com/AutomationPractice/``  
 Target browser: Chrome, Firefox 
-Chrome Browser version: 88.0.4324.96 (Official Build) (64-bit)
-Firefox Browser version: 78.6.0esr (64-bit)
+- Chrome Browser version: 88.0.4324.96 (Official Build) (64-bit)
+- Firefox Browser version: 78.6.0esr (64-bit)
 
 Run test suite: `testng.xml`
 Total tests run: 19
