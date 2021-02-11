@@ -31,7 +31,7 @@ public class PracticePageTest {
 
 	@BeforeSuite
 	public void setUpExtentReports() {
-		
+
 		htmlReporter = new ExtentHtmlReporter("extentReports.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
@@ -39,32 +39,32 @@ public class PracticePageTest {
 
 	@BeforeTest
 	public void setUpTest() throws IOException {
-		
+
 		String projectPath = System.getProperty("user.dir");
 		PropertiesFile.getProperties();
-		
-		if(browserName.equalsIgnoreCase("chrome")) {
+
+		if (browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver");
 			driver = new ChromeDriver();
-			
-			
-		}else if(browserName.equalsIgnoreCase("firefox")) {
+
+		} else if (browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", projectPath + "/drivers/geckodriver");
 			driver = new FirefoxDriver();
-			
+
 		}
-		
-		 ExtentTest test = extent.createTest("Open the web site"); 
-		 test.log(Status.INFO, "Starting test"); test.info("Starting test");
-		 
-		 driver.get("https://rahulshettyacademy.com/AutomationPractice");                    
-		 test.pass("Navigated to url: https://rahulshettyacademy.com/AutomationPractice/ ");
-		 
-		 driver.manage().window().maximize(); 
-		 test.pass("Maximize the window");
-		 
-		 test.info("Test is completed.");
-	
+
+		ExtentTest test = extent.createTest("Open the web site");
+		test.log(Status.INFO, "Starting test");
+		test.info("Starting test");
+
+		driver.get("https://rahulshettyacademy.com/AutomationPractice");
+		test.pass("Navigated to url: https://rahulshettyacademy.com/AutomationPractice/ ");
+
+		driver.manage().window().maximize();
+		test.pass("Maximize the window");
+
+		test.info("Test is completed.");
+
 	}
 
 	@Test(priority = 1)
@@ -75,6 +75,7 @@ public class PracticePageTest {
 
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.clickOnRadioBtn();
+		System.out.println("Is radio button selected? - " + ppo.isRadioBtnSelected());
 
 		test1.pass("Checkbox is checked");
 		test1.info("Test clickOnRadionBtn is completed.");
@@ -117,6 +118,7 @@ public class PracticePageTest {
 
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.clickOnCheckBox();
+		System.out.println("Is checkbox checked? - " + ppo.isCheckBoxChecked());
 
 		test4.pass("Option 2 is checked");
 		test4.info("Test click_on_checkBox is completed.");
@@ -164,22 +166,21 @@ public class PracticePageTest {
 
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.clickOnOpenTabBtn();
-		
-		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
-		
-	    driver.switchTo().window(tabs2.get(1));
-	    test6.pass("Child tab is in focus.");
-	    
-	    driver.close();
-	    test6.pass("Child tab is closed.");
-	    
-	    driver.switchTo().window(tabs2.get(0));
-	    test6.pass("Parent tab is now in focus.");
-		
-	    
-	    System.out.println("Test switchTab - page title is: " + driver.getTitle());
+
+		ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+
+		driver.switchTo().window(tabs2.get(1));
+		test6.pass("Child tab is in focus.");
+
+		driver.close();
+		test6.pass("Child tab is closed.");
+
+		driver.switchTo().window(tabs2.get(0));
+		test6.pass("Parent tab is now in focus.");
+
+		System.out.println("Test switchTab - page title is: " + driver.getTitle());
 		test6.pass("Page title of parent tab is printed.");
-		
+
 		test6.info("Test switchTab  is completed.");
 
 	}
@@ -374,7 +375,7 @@ public class PracticePageTest {
 
 	@Test(priority = 17)
 	public void printNamesOfLinksFromColumnLatestNews() throws InterruptedException {
-		
+
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.scrollingDownToTheBottomOfPage();
 		System.out.println("*******************************************");
@@ -386,7 +387,7 @@ public class PracticePageTest {
 
 	@Test(priority = 18)
 	public void printNamesOfLinksFromColumnSocialMedia() throws InterruptedException {
-		
+
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.scrollingDownToTheBottomOfPage();
 		System.out.println("*******************************************");
@@ -398,7 +399,7 @@ public class PracticePageTest {
 
 	@Test(priority = 19)
 	public void sumPricesForAllCourses() {
-		
+
 		PracticePageObjects ppo = new PracticePageObjects(driver);
 		ppo.sumOfPricesForAllCourses();
 	}
@@ -425,7 +426,6 @@ public class PracticePageTest {
 
 	@AfterSuite
 	public void endTest() {
-		
 		extent.flush();
 	}
 }

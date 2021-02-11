@@ -43,6 +43,13 @@ public class PracticePageObjects {
 
 	public void clickOnRadioBtn() {
 		driver.findElement(radioBtn).click();
+
+	}
+
+	public boolean isRadioBtnSelected() {
+		WebElement radioBtn = driver.findElement(By.cssSelector("input[value='radio2']"));
+		boolean actualValue = radioBtn.isSelected();
+		return actualValue;
 	}
 
 	public void setTextAndAutocomplete() {
@@ -61,6 +68,12 @@ public class PracticePageObjects {
 
 	public void clickOnCheckBox() {
 		driver.findElement(checkbox).click();
+	}
+
+	public boolean isCheckBoxChecked() {
+		WebElement checkBox = driver.findElement(By.cssSelector("input#checkBoxOption2"));
+		boolean actualValue = checkBox.isSelected();
+		return actualValue;
 	}
 
 	public void clickOnOpenWindowBtn() {
@@ -131,7 +144,7 @@ public class PracticePageObjects {
 	}
 
 	public Boolean visibilityOfInputFieldShowHide() {
-		
+
 		if (driver.findElement(inputTextFieldShowHide).isDisplayed()) {
 			System.out.println("Input field is visible");
 			return true;
@@ -143,7 +156,7 @@ public class PracticePageObjects {
 	}
 
 	public String setTextInInputFieldShowHide(String text) {
-		
+
 		driver.findElement(inputTextFieldShowHide).sendKeys(text);
 		return text;
 	}
